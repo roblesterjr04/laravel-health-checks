@@ -1,0 +1,27 @@
+{
+    "name": "rob-lester-jr04/laravel-health-expansion",
+    "description": "An expansion pack for Spatie Laravel Health package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lester\\Health\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Robert Lester",
+            "email": "robertlesterjr@mac.com"
+        }
+    ],
+    "require": {
+        "spatie/laravel-health": "^1.22",
+        "guzzlehttp/guzzle": "^7.7",
+        "mailgun/mailgun-php": "^3.5"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
