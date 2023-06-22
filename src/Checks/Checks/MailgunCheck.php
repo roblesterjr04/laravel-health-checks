@@ -3,7 +3,7 @@
 namespace Lester\Health\Checks\Checks;
 
 use Lester\Health\Checks\Check;
-use Lester\Health\Checks\Result;
+use Spatie\Health\Checks\Result;
 use GuzzleHttp\Client;
 use Carbon\Carbon;
 use Mailgun\Mailgun;
