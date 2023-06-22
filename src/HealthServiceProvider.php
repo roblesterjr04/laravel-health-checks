@@ -1,6 +1,6 @@
 <?php
 
-namespace Lester;
+namespace Lester\Health;
 
 use Illuminate\Support\ServiceProvider;
 
