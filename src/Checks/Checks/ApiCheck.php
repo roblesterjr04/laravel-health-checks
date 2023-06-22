@@ -3,7 +3,7 @@
 namespace Lester\Health\Checks\Checks;
 
 use Spatie\Health\Checks\Check;
-use Spatie\Health\Checks\Result;
+use Lester\Health\Checks\Result;
 use GuzzleHttp\Client;
 use Cache;
 
@@ -14,6 +14,14 @@ class ApiCheck extends Check
     protected $path = 'api/health';
     protected $check;
     protected $cacheSeconds = 45;
+    private $client;
+    
+    public function client($client)
+    {
+        $this->client = $client;
+        
+        return $this;
+    }
 
     public function run(): Result
     {
@@ -67,7 +75,7 @@ class ApiCheck extends Check
 
     protected function getHealth()
     {
-        $client = new Client([
+        $client = $this->client ?? new Client([
             'base_uri' => $this->baseUri,
             'headers' => $this->headers,
         ]);

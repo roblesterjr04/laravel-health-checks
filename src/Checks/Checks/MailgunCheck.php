@@ -3,7 +3,7 @@
 namespace Lester\Health\Checks\Checks;
 
 use Lester\Health\Checks\Check;
-use Spatie\Health\Checks\Result;
+use Lester\Health\Checks\Result;
 use GuzzleHttp\Client;
 use Carbon\Carbon;
 use Mailgun\Mailgun;
@@ -11,19 +11,25 @@ use Mailgun\Mailgun;
 class MailgunCheck extends Check
 {
     protected $domain;
+    protected $fakedResponse;
 
     public function run(): Result
     {
 
         $result = Result::make();
-
+            
         $mg = Mailgun::create(config('health-exp.mailgun.secret'));
 
         try {
 
-            $domains = $mg->domains()->show($this->domain);
-            $status = $domains->getDomain()->getState();
-
+            if ($this->fakedResponse) {
+                $domains = json_decode($this->fakedResponse);
+                $status = $domains->domain->state;
+            } else {
+                $domains = $mg->domains()->show($this->domain);
+                $status = $domains->getDomain()->getState();
+            }
+            
             if ($status == 'active') {
                 return $result->shortSummary("{$this->domain} is ok")->ok();
             } else {
@@ -42,6 +48,13 @@ class MailgunCheck extends Check
     {
         $this->domain = $domain;
 
+        return $this;
+    }
+    
+    public function fakedResponse($json)
+    {
+        $this->fakedResponse = $json;
+        
         return $this;
     }
 }

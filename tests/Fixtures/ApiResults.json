@@ -1,0 +1,123 @@
+{
+	"finishedAt": 1687466668,
+	"checkResults": {
+		"1": {
+			"name": "Cache",
+			"label": "Cache",
+			"notificationMessage": "",
+			"shortSummary": "Ok",
+			"status": "ok",
+			"meta": {
+				"driver": "redis"
+			}
+		},
+		"6": {
+			"name": "CpuLoad",
+			"label": "Cpu Load",
+			"notificationMessage": "",
+			"shortSummary": "0.4580078125 0.41162109375 0.2685546875",
+			"status": "ok",
+			"meta": {
+				"last_minute": 0.4580078125,
+				"last_5_minutes": 0.41162109375,
+				"last_15_minutes": 0.2685546875
+			}
+		},
+		"3": {
+			"name": "Database",
+			"label": "Database",
+			"notificationMessage": "",
+			"shortSummary": "Ok",
+			"status": "ok",
+			"meta": {
+				"connection_name": "mysql"
+			}
+		},
+		"10": {
+			"name": "Email Queue",
+			"label": "Email Queue",
+			"notificationMessage": "",
+			"shortSummary": "0 jobs in emails queue",
+			"status": "ok",
+			"meta": []
+		},
+		"4": {
+			"name": "Emails",
+			"label": "Emails",
+			"notificationMessage": "Queue jobs running failed. Check meta for more information.",
+			"shortSummary": "Failed",
+			"status": "failed",
+			"meta": [
+				"The `emails` queue did not run yet."
+			]
+		},
+		"7": {
+			"name": "Failed Emails",
+			"label": "Failed Emails",
+			"notificationMessage": "",
+			"shortSummary": "0 failed jobs in emails queue",
+			"status": "ok",
+			"meta": []
+		},
+		"8": {
+			"name": "Failed Forms",
+			"label": "Failed Forms",
+			"notificationMessage": "",
+			"shortSummary": "0 failed jobs in example queue",
+			"status": "ok",
+			"meta": []
+		},
+		"9": {
+			"name": "Failed Jobs",
+			"label": "Failed Jobs",
+			"notificationMessage": "",
+			"shortSummary": "0 failed jobs in default queue",
+			"status": "ok",
+			"meta": []
+		},
+		"5": {
+			"name": "Forms",
+			"label": "Forms",
+			"notificationMessage": "",
+			"shortSummary": "Ok",
+			"status": "ok",
+			"meta": []
+		},
+		"11": {
+			"name": "Forms Queue",
+			"label": "Forms Queue",
+			"notificationMessage": "",
+			"shortSummary": "0 jobs in example queue",
+			"status": "ok",
+			"meta": []
+		},
+		"12": {
+			"name": "Queue",
+			"label": "Queue",
+			"notificationMessage": "",
+			"shortSummary": "0 jobs in default queue",
+			"status": "ok",
+			"meta": []
+		},
+		"2": {
+			"name": "Redis",
+			"label": "Redis",
+			"notificationMessage": "",
+			"shortSummary": "Ok",
+			"status": "ok",
+			"meta": {
+				"connection_name": "default"
+			}
+		},
+		"0": {
+			"name": "UsedDiskSpace",
+			"label": "Used Disk Space",
+			"notificationMessage": "",
+			"shortSummary": "24%",
+			"status": "ok",
+			"meta": {
+				"disk_space_used_percentage": 24
+			}
+		}
+	}
+}

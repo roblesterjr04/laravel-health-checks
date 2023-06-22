@@ -1,0 +1,37 @@
+{
+	"min_id": "1608597668957941765",
+	"max_id": "1608597987586633734",
+	"events": [
+		{
+			"id": "12345616813813543515",
+			"source_ip": "0.0.0.0",
+			"program": "program",
+			"message": "[2023-06-22 17:59:53] production.INFO: Something was logged!",
+			"received_at": "2023-06-22T13:59:53-04:00",
+			"generated_at": "2023-06-22T09:59:53-04:00",
+			"display_received_at": "Jun 22 13:59:53",
+			"source_id": 13832547669,
+			"source_name": "system1",
+			"hostname": "system1",
+			"severity": "Info",
+			"facility": "User"
+		},
+		{
+			"id": "12345616813813543515",
+			"source_ip": "0.0.0.0",
+			"program": "program",
+			"message": "[2023-06-22 17:59:53] production.ERROR: Something was logged badly!",
+			"received_at": "2023-06-22T13:59:53-04:00",
+			"generated_at": "2023-06-22T09:59:53-04:00",
+			"display_received_at": "Jun 22 13:59:53",
+			"source_id": 13832547669,
+			"source_name": "system1",
+			"hostname": "system1",
+			"severity": "Info",
+			"facility": "User"
+		}
+	],
+	"sawmill": true,
+	"min_time_at": "2023-06-22T13:59:53-04:00",
+	"reached_record_limit": true
+}

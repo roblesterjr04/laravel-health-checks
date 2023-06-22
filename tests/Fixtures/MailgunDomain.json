@@ -1,0 +1,73 @@
+{
+	"domain": {
+		"created_at": "Mon, 08 May 2023 14:19:46 GMT",
+		"id": "645905023",
+		"is_disabled": false,
+		"name": "mg.example.com",
+		"require_tls": false,
+		"skip_verification": false,
+		"smtp_login": "postmaster@mg.example.com",
+		"spam_action": "disabled",
+		"state": "active",
+		"type": "custom",
+		"web_prefix": "email",
+		"web_scheme": "http",
+		"wildcard": false
+	},
+	"receiving_dns_records": [
+		{
+			"is_active": true,
+			"cached": [
+				"10 mxb.mailgun.org",
+				"10 mxa.mailgun.org"
+			],
+			"priority": "10",
+			"record_type": "MX",
+			"valid": "valid",
+			"value": "mxa.mailgun.org"
+		},
+		{
+			"is_active": true,
+			"cached": [
+				"10 mxb.mailgun.org",
+				"10 mxa.mailgun.org"
+			],
+			"priority": "10",
+			"record_type": "MX",
+			"valid": "valid",
+			"value": "mxb.mailgun.org"
+		}
+	],
+	"sending_dns_records": [
+		{
+			"is_active": true,
+			"cached": [
+				"k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDF9dk8F31e1ZM28Dr9G48b4c9wpoT4e8WjiYI2kFZjy81UAoDKxv5VQRAvcyW4eSuY3PK9UMxRnhcB8EB9HXB+lONeJPfFB/qVpncXXwTtVvu1cYu/2xB1UmQIDAQAB"
+			],
+			"name": "smtp._domainkey.mg.example.com",
+			"record_type": "TXT",
+			"valid": "valid",
+			"value": "k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQ4FsW0JB99dk8F31e1ZM28Dr9G48b4c9wpoT4e8WjiYI2kFZjy81UAoDKxv5VQRAvcyW4eSuY3PK9UMxRnhcB8EB9HXB+lONeJPfFB/qVpncXXwTtVvu1cYu/2xB1UmQIDAQAB"
+		},
+		{
+			"is_active": true,
+			"cached": [
+				"v=spf1 include:mailgun.org ~all"
+			],
+			"name": "mg.example.com",
+			"record_type": "TXT",
+			"valid": "valid",
+			"value": "v=spf1 include:mailgun.org ~all"
+		},
+		{
+			"is_active": true,
+			"cached": [
+				"mailgun.org"
+			],
+			"name": "email.mg.example.com",
+			"record_type": "CNAME",
+			"valid": "valid",
+			"value": "mailgun.org"
+		}
+	]
+}
