@@ -13,6 +13,7 @@ class ApiCheck extends Check
     protected $headers = [];
     protected $path = 'api/health';
     protected $check;
+    protected $fresh = false;
     protected $cacheSeconds = 45;
     private $client;
     
@@ -22,7 +23,19 @@ class ApiCheck extends Check
         
         return $this;
     }
-
+    
+    public function cacheSeconds($n): self
+    {
+        $this->cacheSeconds = $n;
+        return $this;
+    }
+    
+    public function fresh()
+    {
+        $this->fresh = true;
+        return $this;
+    }
+    
     public function run(): Result
     {
         $result = Result::make();
@@ -82,7 +95,10 @@ class ApiCheck extends Check
 
         try {
             return Cache::remember("health_host_{$this->path}_{$this->baseUri}", now()->addSeconds($this->cacheSeconds), function() use ($client) {
-                return json_decode($client->get($this->path)->getBody());
+                $params = [];
+                if ($this->fresh) $params['fresh'] = true;
+                
+                return json_decode($client->get($this->path, $params)->getBody());
             });
         } catch (\Exception $e) {
             return false;
