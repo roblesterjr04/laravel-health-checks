@@ -13,7 +13,7 @@ class PaperTrailTest extends TestCase
 	
 	public function testPaperTrailFailsGracefully(): void
 	{
-		$client = $this->getMockClient();
+		$client = $this->getMockPapertrailClient();
 		
 		$check = PaperTrailCheck::new()->client($client)->onSystem('system1');
 		
@@ -26,7 +26,7 @@ class PaperTrailTest extends TestCase
 	
 	public function testPaperTrailTriggersFailure(): void
 	{
-		$client = $this->getMockClient();
+		$client = $this->getMockPapertrailClient();
 		
 		$check = PaperTrailCheck::new()
 			->highCount(1)
@@ -40,7 +40,7 @@ class PaperTrailTest extends TestCase
 	
 	public function testPaperTrailNoErrorsInTime(): void
 	{
-		$client = $this->getMockClient();
+		$client = $this->getMockPapertrailClient();
 		
 		$check = PaperTrailCheck::new()
 			->highCount(1)
@@ -50,12 +50,6 @@ class PaperTrailTest extends TestCase
 			
 		$result = $check->run();
 		$this->assertEquals($result->status, 'ok');
-	}
-	
-	private function getMockClient()
-	{
-		$fakedResponse = file_get_contents(__DIR__ . '/Fixtures/PapertrailLogs.json');
-		return $this->getMockClientWithResponse($fakedResponse);
 	}
 	
 }

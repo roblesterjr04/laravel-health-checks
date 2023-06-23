@@ -21,4 +21,16 @@ trait MocksGuzzleClients
 		$handlerStack = HandlerStack::create($mock);
 		return new Client(['handler' => $handlerStack]);
 	}
+	
+	public function getMockPapertrailClient()
+	{
+		$fakedResponse = file_get_contents(__DIR__ . '/../Fixtures/PapertrailLogs.json');
+		return $this->getMockClientWithResponse($fakedResponse);
+	}
+	
+	public function getMockHealthClient()
+	{
+		$fakedResponse = file_get_contents(__DIR__ . '/../Fixtures/ApiResults.json');
+		return $this->getMockClientWithResponse($fakedResponse);
+	}
 }
