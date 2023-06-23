@@ -1,6 +1,7 @@
 {
 	"name": "rob-lester-jr04/laravel-health-expansion",
 	"description": "An expansion pack for Spatie Laravel Health package",
+	"keywords": ["spatie", "health", "health-check", "healthcheck", "expansion", "mailgun", "papertrail"],
 	"type": "library",
 	"license": "MIT",
 	"autoload": {
@@ -32,9 +33,13 @@
 	},
 	"extra": {
 		"laravel": {
-  		    "providers": [
-			    "Lester\\Health\\HealthServiceProvider"
-  		    ]
+  			"providers": [
+				"Lester\\Health\\HealthServiceProvider",
+				"Spatie\\Health\\HealthServiceProvider"
+  			],
+			"aliases": {
+				"Health": "Spatie\\Health\\Facades\\Health"
+			}
 		}
 	},
 	"require-dev": {
