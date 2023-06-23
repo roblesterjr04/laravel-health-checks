@@ -1,7 +1,7 @@
 # Expand the reach of your health checks!
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rob-lester-jr04/laravel-health-expansion.svg)](https://packagist.org/packages/rob-lester-jr04/laravel-health-expansion)
-[![run-tests](https://github.com/rob-lester-jr04/laravel-health-expansion/actions/workflows/run-tests.yml/badge.svg)](https://github.com/rob-lester-jr04/laravel-health-expansion/actions/workflows/run-tests.yml)
+[![PHP Composer](https://github.com/roblesterjr04/laravel-health-checks/actions/workflows/run-tests.yml/badge.svg)](https://github.com/roblesterjr04/laravel-health-checks/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/rob-lester-jr04/laravel-health-expansion.svg)](https://packagist.org/packages/rob-lester-jr04/laravel-health-expansion)
 
 Using this package to add more health checks to [Spatie Health Checks for Laravel](https://packagist.org/packages/rob-lester-jr04/laravel-health-expansion).
