@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
 use Carbon\Carbon;
 use Mailgun\Mailgun;
 
-class MailgunCheck extends Check
+class MailgunDomainCheck extends Check
 {
     protected $domain;
     protected $fakedResponse;

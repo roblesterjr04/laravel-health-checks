@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Lester\Health\Checks\Checks\MailgunCheck;
+use Lester\Health\Checks\Checks\MailgunDomainCheck;
 use Lester\Health\Checks\Checks\PaperTrailCheck;
 use Lester\Health\Checks\Checks\ApiCheck;
 use PHPUnit\Framework\TestCase;
@@ -17,7 +17,7 @@ class ResultTest extends TestCase
 	{
 		$fakedResponse = file_get_contents(__DIR__ . '/Fixtures/MailgunDomain.json');
 		
-		$check = MailgunCheck::new()->fakedResponse($fakedResponse)->domain('mg.example.com');
+		$check = MailgunDomainCheck::new()->fakedResponse($fakedResponse)->domain('mg.example.com');
 			
 		$result = $check->run();
 		
