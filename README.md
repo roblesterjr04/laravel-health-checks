@@ -42,7 +42,32 @@ This package also contains the following checks:
 * PaperTrailCheck
 	* Scans PaperTrail logs for a set number of errors in a set time frame.
 
+### Using the MailGun domain check
+
+First, set the API key in the `.env` file.
+
+```php
+	MAILGUN_SECRET=########
+```
+
+Then enable the check in the service provider
+
+```php
+
+use Spatie\Health\Facades\Health;
+use Lester\Health\Checks\Checks\MailgunDomainCheck;
+
+Health::checks([
+	// ...
 	
+	MailgunDomainCheck::new()
+		->domain('mg.example.com'),
+		
+	// ...
+]);
+
+
+```
 
 ## Testing
 
