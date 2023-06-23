@@ -31,7 +31,7 @@ class CombinedCheck extends Check
             $summary[] = $this->checkIcons[(string)$checkResult->status] . $checkResult->getShortSummary();
         }
         
-        $result->shortSummary(implode("\n", $summary));
+        $result->shortSummary(implode("<br />", $summary));
 
         if ($notOk == $total) return $result->failed();
         if ($notOk > 0) return $result->warning();
