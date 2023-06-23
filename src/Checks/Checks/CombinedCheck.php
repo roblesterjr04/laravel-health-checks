@@ -28,15 +28,16 @@ class CombinedCheck extends Check
             $checkResult = $check->run();
             $status = (string)$checkResult->status;
             if ($status !== 'ok') $notOk++;
-            $summary[] = $this->checkIcons[(string)$checkResult->status] . $checkResult->getShortSummary();
+            $summary[] = $this->checkIcons[(string)$checkResult->status] . ($checkResult->getNotificationMessage() 
+                ?: $checkResult->getShortSummary());
         }
         
-        $result->shortSummary(implode("<br />", $summary));
+        $result->ok(implode("<br />", $summary));
 
         if ($notOk == $total) return $result->failed();
         if ($notOk > 0) return $result->warning();
 
-        return $result->ok();
+        return $result;
 
     }
     

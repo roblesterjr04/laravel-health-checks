@@ -25,5 +25,12 @@ trait SpoofsLaravelApp
 			}
 		}
 		
+		if (!function_exists('trans')) {
+			function trans($string)
+			{
+				return $string;
+			}
+		}
+		
 	}
 }
