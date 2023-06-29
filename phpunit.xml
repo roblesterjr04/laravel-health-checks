@@ -6,6 +6,7 @@
          executionOrder="depends,defects"
          beStrictAboutOutputDuringTests="true"
          failOnRisky="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
          failOnWarning="true">
     <testsuites>
         <testsuite name="default">
