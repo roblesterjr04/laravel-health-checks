@@ -6,6 +6,14 @@
 
 Using this package to add more health checks to [Spatie Health Checks for Laravel](https://packagist.org/packages/rob-lester-jr04/laravel-health-expansion).
 
+## Installation
+
+```bash
+composer require rob-lester-jr04/laravel-health-expansion
+```
+
+Laravel will automatically register the service provider.
+
 Here's an example where we'll monitor errors in PaperTrail.
 
 ```php
