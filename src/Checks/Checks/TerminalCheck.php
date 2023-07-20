@@ -37,6 +37,7 @@ class TerminalCheck extends Check
 	
 	public function executeTerminal($cmd, $stdin="", &$stdout = "", &$stderr = "", $timeout=false)
 	{
+		
 		$pipes = array();
 		$process = proc_open(
 			$cmd,
