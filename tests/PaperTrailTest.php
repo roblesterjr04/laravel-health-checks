@@ -3,13 +3,12 @@
 namespace Tests;
 
 use Lester\Health\Checks\Checks\PaperTrailCheck;
-use PHPUnit\Framework\TestCase;
-use SpoofsLaravelApp;
-use TestTraits\MocksGuzzleClients;
+use Tests\TestCase;
+use Tests\TestTraits\MocksGuzzleClients;
 
 class PaperTrailTest extends TestCase
 {
-	use SpoofsLaravelApp, MocksGuzzleClients;
+	use MocksGuzzleClients;
 	
 	public function testPaperTrailFailsGracefully(): void
 	{

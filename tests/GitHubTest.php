@@ -4,12 +4,10 @@ namespace Tests;
 
 use Lester\Health\Checks\Checks\GitHubCheck;
 use Lester\Health\Checks\Checks\TerminalCheck;
-use PHPUnit\Framework\TestCase;
-use SpoofsLaravelApp;
+use Tests\TestCase;
 
 class GitHubTest extends TestCase
 {
-	use SpoofsLaravelApp;
 	
 	public function testGithubCheck()
 	{

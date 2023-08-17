@@ -5,13 +5,12 @@ namespace Tests;
 use Lester\Health\Checks\Checks\MailgunDomainCheck;
 use Lester\Health\Checks\Checks\PaperTrailCheck;
 use Lester\Health\Checks\Checks\ApiCheck;
-use PHPUnit\Framework\TestCase;
-use SpoofsLaravelApp;
-use TestTraits\MocksGuzzleClients;
+use Tests\TestCase;
+use Tests\TestTraits\MocksGuzzleClients;
 
 class ResultTest extends TestCase
 {
-	use SpoofsLaravelApp, MocksGuzzleClients;
+	use MocksGuzzleClients;
 		
 	public function testMailgunReturnsResult(): void
 	{

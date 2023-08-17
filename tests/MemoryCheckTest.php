@@ -3,13 +3,11 @@
 namespace Tests;
 
 use Lester\Health\Checks\Checks\MemoryCheck;
-use PHPUnit\Framework\TestCase;
-use SpoofsLaravelApp;
-use TestTraits\MocksGuzzleClients;
+use Tests\TestCase;
+use Tests\TestTraits\MocksGuzzleClients;
 
 class MemoryCheckTest extends TestCase
 {
-	use SpoofsLaravelApp;
 	
 	public function testMemoryCheck()
 	{

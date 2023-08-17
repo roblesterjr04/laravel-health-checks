@@ -1,6 +1,6 @@
 <?php
 
-namespace TestTraits;
+namespace Tests\TestTraits;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
