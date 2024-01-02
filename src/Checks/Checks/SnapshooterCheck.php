@@ -1,6 +1,6 @@
 <?php
 
-namespace Checks\Checks;
+namespace Lester\Health\Checks\Checks;
 
 use Spatie\Health\Checks\Checks\PingCheck as Check;
 use Spatie\Health\Checks\Result as DefaultResult;
