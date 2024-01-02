@@ -34,7 +34,7 @@ class SnapshooterCheck extends Check
 			$status = $backup["status"] ?? "failed";
 
 			if ($status != 'completed') {
-				$failedjobs[] = "⛔️" . ($job['name'] ?? 'BACKUP FAILED');
+				$failedjobs[] = "⛔️ [$status] " . ($job['name'] ?? 'BACKUP FAILED');
 			}
 		}
 
