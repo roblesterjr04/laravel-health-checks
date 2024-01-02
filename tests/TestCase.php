@@ -14,8 +14,6 @@ class TestCase extends Orchestra
 {
 	protected function setUp(): void
 	{
-		parent::setUp();
-
 		Factory::guessFactoryNamesUsing(
 			fn (string $modelName) => 'Spatie\\Health\\Database\\Factories\\'.class_basename($modelName).'Factory'
 		);
@@ -45,5 +43,9 @@ class TestCase extends Orchestra
 				return $string;
 			}
 		}
+		
+		parent::setUp();
+		
+				
 	}
 }

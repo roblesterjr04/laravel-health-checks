@@ -15,10 +15,9 @@ class MailgunDomainCheck extends Check
 
     public function run(): Result
     {
-
         $result = Result::make();
             
-        $mg = Mailgun::create(config('health-exp.mailgun.secret'));
+        $mg = Mailgun::create(config('health-exp.mailgun.secret') ?: '');
 
         try {
 

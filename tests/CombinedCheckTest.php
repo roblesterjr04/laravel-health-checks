@@ -18,6 +18,8 @@ class CombinedCheckTest extends TestCase
 		$ptClient = $this->getMockPapertrailClient();
 		$apClient = $this->getMockHealthClient();
 		
+		PaperTrailCheck::new()->onSystem('mysystem')->client($ptClient)->run();
+		
 		$check = CombinedCheck::new()
 			->using([
 				PaperTrailCheck::new()->onSystem('mysystem')->client($ptClient),

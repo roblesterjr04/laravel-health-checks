@@ -1,0 +1,265 @@
+{
+  "data": [
+	{
+	  "id": "c6757905-4ec5-49d9-bc8e-3f53ff29f9e3",
+	  "name": "Server File",
+	  "recipe": "file-backups",
+	  "compute_type": "server",
+	  "compute": {
+		"type": "server",
+		"server_id": 3,
+		"server": {
+		  "id": 3,
+		  "host": "10.0.33.142",
+		  "user": "simon",
+		  "port": 22,
+		  "name": "docker2",
+		  "created_at": "2021-12-14T14:19:56.000000Z",
+		  "last_used": "2021-12-30T12:39:14.000000Z",
+		  "status": "success",
+		  "key": {
+			"id": 6112328,
+			"public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC1KJw5YlnZapvLdHBauy4W+MXunQDGIXVWqxS+7oIhLSFQYcjoIxy4bmzYWci2tiNJ5SBswbkndugo7uDNBf1wyEw7sNEmgDytMeDDvqBJ9Zq5z/qVf76Ro642wPdhaErUR7XgJsB90mr5Ci1M5PtFKr2H7ZVgtII5qGUCD9j4sbX/wtX9Fwi+dumuGAUkxP5o/VMoByiec5p5rF3BlobGcmkL46a7iderT3u+fJiiWkzPV7Z6o9VsVXK4mCGZwnoLZgpII0KBPzWZfO3bAq/NYG9ZUw5hB5qSsbaKsCh+a7Re4lJOhVofvznsKTiwVv4IRIWS0XbWl0bluU0HwwBA9v0rWCggukLeS9BKND24FAcadWBAP721GfNoCQ5egUpjblNzCISXmli8VVp5VDd1nFvKc4I0jjfaaX7mpbwLn3Gsf8hrDeZ5XwK8kZDiPAi6y2wRD/6AVyvnyFxiLGUJFV81cRI0z2M4LPE453qiAZy5EjeU4/Ku8ZM/9uvRHFOXr8tRG1L9EOK9Ji+HCxa54t2NqXXuUHaZFSRMkRl4eW7Q1Pv5FZw2ORChDIleeIYp36LRnW2kG+1qDHRsT0dBBzgKM6WHpwvVQRzwgJ/Z8v2lxwr7VL64AtwMFTsKvzPJtkl0IE1DS7fXjbaqs+rX+XjsNvFzoSw7pbE826Uhsw== bot@snapshooter.com",
+			"name": "SnapShooter 2021-12-14 14:19:48",
+			"created_at": "2021-12-14T14:19:48.000000Z",
+			"last_used": "2021-12-30T12:39:35.000000Z"
+		  }
+		}
+	  },
+	  "config": {
+		"root_path": {
+		  "value": "/home/simon/backup",
+		  "label": "Root Paths",
+		  "type": "textarea"
+		},
+		"exclude": {
+		  "value": "/backups\n/boot\n/run\n/proc\n/sys\n/mnt\n/media\n/dev\n/var/run\n/var/cache\n/var/tmp\n/var/lib/apt/lists\n/var/lib/lxcfs\n/bin\n/lib\n/lib64\n/sbin\n/usr/share\n/usr/src\n/usr/lib\n/usr/bin\n/usr/sbin\n/swap\n/swapfile\n/home/*/.gvfs\n/home/*/.cache\n/home/*/.local/share/Trash\n/tmp\n",
+		  "label": "Exclude List",
+		  "type": "textarea"
+		},
+		"compression_level": {
+		  "value": 6,
+		  "label": "Compression Level",
+		  "type": "number"
+		},
+		"use_sudo": {
+		  "value": "True",
+		  "label": "Run using Sudo?",
+		  "type": "checkbox"
+		}
+	  },
+	  "last_ran_at": "2021-12-30T12:39:00.000000Z",
+	  "created_at": "2021-12-14T14:19:37.000000Z",
+	  "updated_at": "2021-12-30T12:39:00.000000Z",
+	  "schedule": [
+		{
+		  "id": 3,
+		  "schedule_name": "main",
+		  "schedule_order": 0,
+		  "status": "active",
+		  "frequency": 24,
+		  "frequency_mode": "hour",
+		  "cron": "0 * * * *",
+		  "timezone": "UTC",
+		  "run_offset": 0,
+		  "retention": {
+			"hourly": 0,
+			"daily": 12,
+			"weekly": 0,
+			"monthly": 0
+		  },
+		  "resource_type": "BackupJob",
+		  "resource_id": "c6757905-4ec5-49d9-bc8e-3f53ff29f9e3"
+		}
+	  ],
+	  "storage": [
+		{
+		  "id": 3,
+		  "name": "SnapShooter EU (Ireland)",
+		  "provider": "snapshooter",
+		  "region": "eu-west-1",
+		  "bucket": "9ewsy1.free.eu-west-1.snapshooter.cloud",
+		  "endpoint": null
+		}
+	  ],
+	  "last_backups": [
+		{
+		  "id": "b8ee1bb5-47ff-48a2-a134-376c92be8c75",
+		  "job_id": "c6757905-4ec5-49d9-bc8e-3f53ff29f9e3",
+		  "tags": {
+			"manual": 1,
+			"hourly": 0,
+			"daily": 0,
+			"weekly": 0,
+			"monthly": 0
+		  },
+		  "s3_directory": "snapshooter/c6757905-server-file/2021/12/30/12-38",
+		  "created_at": "2021-12-30T12:38:59.000000Z",
+		  "started_at": "2021-12-30T12:39:00.000000Z",
+		  "completed_at": "2021-12-30T12:39:14.000000Z",
+		  "status": "completed",
+		  "monitoring_available": true
+		},
+		{
+		  "id": "1970047d-6e58-4c9b-a84e-cfbe68fb545d",
+		  "job_id": "c6757905-4ec5-49d9-bc8e-3f53ff29f9e3",
+		  "tags": {
+			"manual": 1,
+			"hourly": 0,
+			"daily": 0,
+			"weekly": 0,
+			"monthly": 0
+		  },
+		  "s3_directory": "snapshooter/c6757905-server-file/2021/12/30/12-36",
+		  "created_at": "2021-12-30T12:36:13.000000Z",
+		  "started_at": "2021-12-30T12:36:14.000000Z",
+		  "completed_at": "2021-12-30T12:36:27.000000Z",
+		  "status": "completed",
+		  "monitoring_available": true
+		},
+		{
+		  "id": "6f2e1aa7-7e6e-417d-b77a-dfec8c400804",
+		  "job_id": "c6757905-4ec5-49d9-bc8e-3f53ff29f9e3",
+		  "tags": {
+			"manual": 1,
+			"hourly": 0,
+			"daily": 0,
+			"weekly": 0,
+			"monthly": 0
+		  },
+		  "s3_directory": "snapshooter/c6757905-server-file/2021/12/30/12-31",
+		  "created_at": "2021-12-30T12:31:43.000000Z",
+		  "started_at": "2021-12-30T12:31:44.000000Z",
+		  "completed_at": "2021-12-30T12:31:52.000000Z",
+		  "status": "completed_with_errors",
+		  "monitoring_available": true
+		}
+	  ]
+	},
+	{
+	  "id": "127906c7-4599-4d87-94b0-33c9a45c7ea8",
+	  "name": "URL Backup",
+	  "recipe": "url-backups",
+	  "compute_type": "server",
+	  "compute": {
+		"type": "server",
+		"server_id": 3,
+		"server": {
+		  "id": 3,
+		  "host": "10.0.33.142",
+		  "user": "simon",
+		  "port": 22,
+		  "name": "docker2",
+		  "created_at": "2021-12-14T14:19:56.000000Z",
+		  "last_used": "2021-12-30T12:39:14.000000Z",
+		  "status": "success",
+		  "key": {
+			"id": 6112328,
+			"public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC1KJw5YlnZapvLdHBauy4W+MXunQDGIXVWqxS+7oIhLSFQYcjoIxy4bmzYWci2tiNJ5SBswbkndugo7uDNBf1wyEw7sNEmgDytMeDDvqBJ9Zq5z/qVf76Ro642wPdhaErUR7XgJsB90mr5Ci1M5PtFKr2H7ZVgtII5qGUCD9j4sbX/wtX9Fwi+dumuGAUkxP5o/VMoByiec5p5rF3BlobGcmkL46a7iderT3u+fJiiWkzPV7Z6o9VsVXK4mCGZwnoLZgpII0KBPzWZfO3bAq/NYG9ZUw5hB5qSsbaKsCh+a7Re4lJOhVofvznsKTiwVv4IRIWS0XbWl0bluU0HwwBA9v0rWCggukLeS9BKND24FAcadWBAP721GfNoCQ5egUpjblNzCISXmli8VVp5VDd1nFvKc4I0jjfaaX7mpbwLn3Gsf8hrDeZ5XwK8kZDiPAi6y2wRD/6AVyvnyFxiLGUJFV81cRI0z2M4LPE453qiAZy5EjeU4/Ku8ZM/9uvRHFOXr8tRG1L9EOK9Ji+HCxa54t2NqXXuUHaZFSRMkRl4eW7Q1Pv5FZw2ORChDIleeIYp36LRnW2kG+1qDHRsT0dBBzgKM6WHpwvVQRzwgJ/Z8v2lxwr7VL64AtwMFTsKvzPJtkl0IE1DS7fXjbaqs+rX+XjsNvFzoSw7pbE826Uhsw== bot@snapshooter.com",
+			"name": "SnapShooter 2021-12-14 14:19:48",
+			"created_at": "2021-12-14T14:19:48.000000Z",
+			"last_used": "2021-12-30T12:39:35.000000Z"
+		  }
+		}
+	  },
+	  "config": {
+		"url": {
+		  "value": "**not set**",
+		  "label": "Download URL",
+		  "type": "text"
+		}
+	  },
+	  "last_ran_at": "2021-12-22T13:11:52.000000Z",
+	  "created_at": "2021-12-15T06:44:59.000000Z",
+	  "updated_at": "2021-12-22T13:11:52.000000Z",
+	  "schedule": [
+		{
+		  "id": 4,
+		  "schedule_name": "main",
+		  "schedule_order": 0,
+		  "status": "active",
+		  "frequency": 24,
+		  "frequency_mode": "hour",
+		  "cron": "0 * * * *",
+		  "timezone": "UTC",
+		  "run_offset": 0,
+		  "retention": {
+			"hourly": 0,
+			"daily": 1,
+			"weekly": 0,
+			"monthly": 0
+		  },
+		  "resource_type": "BackupJob",
+		  "resource_id": "127906c7-4599-4d87-94b0-33c9a45c7ea8"
+		}
+	  ],
+	  "storage": [
+		{
+		  "id": 3,
+		  "name": "SnapShooter EU (Ireland)",
+		  "provider": "snapshooter",
+		  "region": "eu-west-1",
+		  "bucket": "9ewsy1.free.eu-west-1.snapshooter.cloud",
+		  "endpoint": null
+		}
+	  ],
+	  "last_backups": [
+		{
+		  "id": "13e7b82a-a6a3-4728-ad7d-2d3d10703c91",
+		  "job_id": "127906c7-4599-4d87-94b0-33c9a45c7ea8",
+		  "tags": {
+			"manual": 1,
+			"hourly": 0,
+			"daily": 0,
+			"weekly": 0,
+			"monthly": 0
+		  },
+		  "s3_directory": "snapshooter/127906c7-url-backup/2021/12/22/13-11",
+		  "created_at": "2021-12-22T13:11:51.000000Z",
+		  "started_at": "2021-12-22T13:11:52.000000Z",
+		  "completed_at": "2021-12-22T13:11:57.000000Z",
+		  "status": "failed",
+		  "monitoring_available": true
+		},
+		{
+		  "id": "d4e047e3-1c68-4dc9-86d3-2c8a70dfa42a",
+		  "job_id": "127906c7-4599-4d87-94b0-33c9a45c7ea8",
+		  "tags": {
+			"manual": 1,
+			"hourly": 0,
+			"daily": 0,
+			"weekly": 0,
+			"monthly": 0
+		  },
+		  "s3_directory": "snapshooter/127906c7-url-backup/2021/12/22/13-11",
+		  "created_at": "2021-12-22T13:11:39.000000Z",
+		  "started_at": "2021-12-22T13:11:41.000000Z",
+		  "completed_at": "2021-12-22T13:11:45.000000Z",
+		  "status": "failed",
+		  "monitoring_available": true
+		},
+		{
+		  "id": "0729590f-64a8-4c19-8ee1-a248443525e0",
+		  "job_id": "127906c7-4599-4d87-94b0-33c9a45c7ea8",
+		  "tags": {
+			"manual": 1,
+			"hourly": 0,
+			"daily": 0,
+			"weekly": 0,
+			"monthly": 0
+		  },
+		  "s3_directory": "snapshooter/127906c7-url-backup/2021/12/15/11-31",
+		  "created_at": "2021-12-15T11:31:23.000000Z",
+		  "started_at": "2021-12-15T11:31:24.000000Z",
+		  "completed_at": "2021-12-15T11:32:31.000000Z",
+		  "status": "completed",
+		  "monitoring_available": true
+		}
+	  ]
+	}
+  ],
+  "links": {
+  },
+  "meta": {
+  }
+}
