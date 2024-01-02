@@ -16,11 +16,13 @@ class SnapshooterCheck extends Check
 	{
 		$result = Result::make();
 		$key = config('health-exp.snapshooter.secret') ?: 'ss-secret';
-		
+
 		$jobs = Http::withToken($key)
 			->get('https://api.snapshooter.com/v1/jobs')
 			->json('data');
-			
+
+		$failedjobs = [];
+
 		foreach ($jobs as $job) {
 			$jobId = $job["id"];
 			$backup = Http::withToken($key)
@@ -28,15 +30,20 @@ class SnapshooterCheck extends Check
 					"sort" => "-completed_at"
 				])
 				->json("data")[0] ?? null;
-				
+
 			$status = $backup["status"] ?? "failed";
-			
-			if ($status != 'complete') {
-				return $result->failed($job['name'] ?? 'BACKUP FAILED');
+
+			if ($status != 'completed') {
+				$failedjobs[] = "⛔️" . ($job['name'] ?? 'BACKUP FAILED');
 			}
 		}
-		
+
+		if (count($failedjobs) > 0) {
+			$result->shortSummary(implode("<br />", $failedjobs));
+			return $result->failed();
+		}
+
 		return $result->ok();
 	}
-	
+
 }
