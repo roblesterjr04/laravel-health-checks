@@ -12,8 +12,6 @@ use Illuminate\Support\Facades\Http;
 
 class SnapshooterCheck extends Check
 {
-	private $timeout = 5;
-	
 	public function run(): Result
 	{
 		$key = config('health-exp.snapshooter.secret') ?: 'ss-secret';
