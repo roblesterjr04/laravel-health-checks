@@ -14,6 +14,7 @@ class SnapshooterCheck extends Check
 {
 	public function run(): Result
 	{
+		$result = Result::make();
 		$key = config('health-exp.snapshooter.secret') ?: 'ss-secret';
 		
 		$jobs = Http::withToken($key)
@@ -31,11 +32,11 @@ class SnapshooterCheck extends Check
 			$status = $backup["status"] ?? "failed";
 			
 			if ($status != 'complete') {
-				return $this->failedResult();
+				return $result->failed($job['name'] ?? 'BACKUP FAILED');
 			}
 		}
 		
-		return Result::make()->ok();
+		return $result->ok();
 	}
 	
 }
