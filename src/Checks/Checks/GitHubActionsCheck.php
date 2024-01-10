@@ -18,7 +18,7 @@ class GitHubActionsCheck extends Check
 	public function run(): Result
 	{
 		$result = Result::make();
-		$response = Http::withToken(config('health-exp.mailgun.secret') ?: '')
+		$response = Http::withToken(config('health-exp.github.secret') ?: '')
 			->get("https://api.github.com/repos/{$this->owner}/{$this->repo}/actions/runs");
 			
 		$array = $response->json('workflow_runs');
