@@ -32,6 +32,8 @@ class GitHubActionsCheck extends Check
 				} 
 				
 				if ($run['conclusion'] == 'failure') return $result->failed();
+				
+				return $result->ok();
 			}
 		}
 		

@@ -30,7 +30,7 @@ class GitHubTest extends TestCase
 		$this->assertInstanceOf('Lester\Health\Checks\Result', $result);
 	}
 	
-	public function testPingRedirectCheck()
+	public function testGithubActions()
 	{
 		
 		Http::fake([
@@ -41,6 +41,7 @@ class GitHubTest extends TestCase
 					],
 					[
 						'name' => 'Test Flow',
+						'status' => 'completed',
 						'conclusion' => 'failure'
 					]
 				]
