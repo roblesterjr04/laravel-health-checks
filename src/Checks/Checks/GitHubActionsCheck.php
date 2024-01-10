@@ -25,6 +25,12 @@ class GitHubActionsCheck extends Check
 		
 		foreach ($array as $run) {
 			if ($run['name'] === $this->action) {
+				
+				if ($run['status'] == 'in_progress') {
+					$result->shortSummary('Test program running...');
+					return $result->warning();
+				} 
+				
 				if ($run['conclusion'] == 'failure') return $result->failed();
 			}
 		}
