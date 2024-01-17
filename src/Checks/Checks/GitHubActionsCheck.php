@@ -27,8 +27,7 @@ class GitHubActionsCheck extends Check
 			if ($run['name'] === $this->action) {
 				
 				if ($run['status'] == 'in_progress') {
-					$result->shortSummary('Test program running...');
-					return $result->warning();
+					return $result->warning('Test program running...');
 				} 
 				
 				if ($run['conclusion'] == 'failure') return $result->failed();
